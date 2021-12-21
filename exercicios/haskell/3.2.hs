@@ -1,0 +1,1 @@
+dec2int list = foldl (\x y -> 10 *x + y) 0 list

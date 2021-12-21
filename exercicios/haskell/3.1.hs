@@ -1,0 +1,1 @@
+func list m f = filter (f) (map (m) list)
