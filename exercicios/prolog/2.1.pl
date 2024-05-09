@@ -23,15 +23,14 @@ fibonnaci(N1,F1),
 fibonnaci(N2,F2),
 F is F1 + F2.
 
-hasDivisers(N,3) :-
-0 is mod(N,2).
 
-hasDivisers(N, M) :-
-M1 is M - 1,
-0 is mod(N,M1);
-hasDivisers(N, M1).
+hasDivisers(_,1,0).
+hasDivisers(1,_,0).
+hasDivisers(N,M,R) :-
+M >1,
+M1 is M -1,
+hasDivisers(N,M1,R1),
+((0 is mod(N,M)) -> R is R1 + 1; R is R1+0).
 
-isPrime(1).
-isPrime(2).
-isPrime(N) :-
-\+hasDivisers(N, N).
+
+isPrime(X):- hasDivisers(X,X-1,0).

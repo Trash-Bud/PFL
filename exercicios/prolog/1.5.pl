@@ -15,8 +15,3 @@ chefiado_por(analista, supervisor).
 chefiado_por(supervisor, supervisor_chefe).
 chefiado_por(supervisor_chefe, diretor).
 chefiado_por(secretaria_exec, diretor).
-
-superior(X,Y) :-
-    cargo(M,Y),
-    chefiado_por(C,M),
-    cargo(C,X).
